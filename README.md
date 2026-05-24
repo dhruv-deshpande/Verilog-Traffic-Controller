@@ -1,11 +1,9 @@
-## Traffic Light Controller (6-State FSM)
+## Verilog Modified Traffic Controller
 
 A 6-state finite state machine designed in Verilog to control a T-junction traffic intersection.
 
 ### 1. Junction Layout
 <img width="727" height="340" alt="image" src="https://github.com/user-attachments/assets/2aba1607-3e38-494e-9a92-66955312b3a9" />
-
-
 
 The intersection manages four distinct traffic paths:
 * **M1:** Main Flow (Top lane, straight)
@@ -30,17 +28,7 @@ The FSM cycles through 6 distinct cases based on the timing triggers for main fl
 ### 3. FSM State Diagram
 The following diagram illustrates the state transitions and hold conditions (denoted by `~` for the active-low/hold state).
 
-```mermaid
-stateDiagram-v2
-    S1 --> S1 : ~TMG
-    S1 --> S2 : TMG
-    S2 --> S2 : ~TY1
-    S2 --> S3 : TY1
-    S3 --> S3 : ~TTG
-    S3 --> S4 : TTG
-    S4 --> S4 : ~TY2
-    S4 --> S5 : TY2
-    S5 --> S5 : ~TSG
-    S5 --> S6 : TSG
+<img width="859" height="667" alt="image" src="https://github.com/user-attachments/assets/dc5ca2c9-8ce3-48c5-8bc0-09e9747b047f" />
+
     S6 --> S6 : ~TY3
     S6 --> S1 : TY3
