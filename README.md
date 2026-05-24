@@ -3,7 +3,8 @@
 A 6-state finite state machine designed in Verilog to control a T-junction traffic intersection.
 
 ### 1. Junction Layout
-<img width="1440" height="1026" alt="image" src="https://github.com/user-attachments/assets/f2d6bfb5-bcb7-4523-b103-7b160280dec0" />
+<img width="827" height="440" alt="image" src="https://github.com/user-attachments/assets/2aba1607-3e38-494e-9a92-66955312b3a9" />
+
 
 
 The intersection manages four distinct traffic paths:
