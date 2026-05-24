@@ -29,3 +29,23 @@ The FSM cycles through 6 distinct cases based on the timing triggers for main fl
 The following diagram illustrates the state transitions and hold conditions (denoted by `-` for the active-low/hold state).
 
 <img width="659" height="467" alt="image" src="https://github.com/user-attachments/assets/dc5ca2c9-8ce3-48c5-8bc0-09e9747b047f" />
+
+### Testbench Console Output
+
+The FSM logic was verified using Icarus Verilog. The `$monitor` output below tracks the binary state of each traffic light (where `001` = Green, `010` = Yellow, `100` = Red) across the simulated time steps.
+
+```text
+[2026-05-22 13:09:42 UTC] iverilog '-Wall' '-g2012' design.sv testbench.sv
+Time=0 | rst=0 | M1=xxx | MT=xxx | M2=xxx | S=xxx
+Time=500000000000 | rst=0 | M1=001 | MT=100 | M2=001 | S=100
+Time=1000000000000 | rst=1 | M1=001 | MT=100 | M2=001 | S=100
+Time=2000000000000 | rst=0 | M1=001 | MT=100 | M2=001 | S=100
+Time=2250000000000 | rst=0 | M1=001 | MT=100 | M2=010 | S=100
+Time=2850000000000 | rst=0 | M1=001 | MT=001 | M2=100 | S=100
+Time=4950000000000 | rst=0 | M1=010 | MT=010 | M2=100 | S=100
+Time=5550000000000 | rst=0 | M1=100 | MT=100 | M2=100 | S=001
+Time=7650000000000 | rst=0 | M1=100 | MT=100 | M2=100 | S=010
+Time=8250000000000 | rst=0 | M1=001 | MT=100 | M2=001 | S=100
+testbench.sv:38: $finish called at 202000000000000 (1ps)
+Done
+```
