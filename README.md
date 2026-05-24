@@ -8,7 +8,7 @@ A 6-state finite state machine designed in Verilog to control a T-junction traff
 * **Reset Condition:** Asynchronous, active-high reset (`rst`). Forces the intersection into a safe default state ($S1$: Main Flow Green, all others Red) upon system initialization.
 * **Clocking:** Fully synchronous state transitions triggered on the positive edge of the system clock.
 
-### 1. Junction Layout
+### Junction Layout
 <img width="627" height="340" alt="image" src="https://github.com/user-attachments/assets/2aba1607-3e38-494e-9a92-66955312b3a9" />
 
 The intersection manages four distinct traffic paths:
@@ -17,7 +17,7 @@ The intersection manages four distinct traffic paths:
 * **M2:** Main Bottom (Bottom lane, straight)
 * **S:** Side Road (Right turn onto main)
 
-### 2. State Transition Table
+### State Transition Table
 The FSM cycles through 6 distinct cases based on the timing triggers for main flows, turns, and side roads. 
 
 | State | Main 1 (M1) | Main Turn (MT) | Main 2 (M2) | Side (S) | Next State Trigger |
@@ -31,7 +31,7 @@ The FSM cycles through 6 distinct cases based on the timing triggers for main fl
 
 *(Note: G = Green, Y = Yellow, R = Red)*
 
-### 3. FSM State Diagram
+### FSM State Diagram
 The following diagram illustrates the state transitions and hold conditions (denoted by `-` for the active-low/hold state).
 
 <img width="659" height="467" alt="image" src="https://github.com/user-attachments/assets/dc5ca2c9-8ce3-48c5-8bc0-09e9747b047f" />
