@@ -32,7 +32,7 @@ The FSM cycles through 6 distinct cases based on the timing triggers for main fl
 *(Note: G = Green, Y = Yellow, R = Red)*
 
 ### FSM State Diagram
-The following diagram illustrates the state transitions and hold conditions (denoted by `-` for the active-low/hold state).
+The following diagram illustrates the state transitions and hold conditions (denoted by `~` for the active-low/hold state).
 
 <img width="659" height="467" alt="image" src="https://github.com/user-attachments/assets/dc5ca2c9-8ce3-48c5-8bc0-09e9747b047f" />
 
